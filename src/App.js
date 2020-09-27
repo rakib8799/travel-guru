@@ -1,26 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { createContext, useState } from 'react';
+import HomeRoute from './components/HomeRoute/HomeRoute';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+export const UserContext = createContext();
+export const CategoryContext = createContext();
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [loggedInUser, setLoggedInUser] = useState([]);
+    const [category, setCategory] = useState([]);
+
+    return (
+        <UserContext.Provider value={[loggedInUser, setLoggedInUser]} className="all">
+            <CategoryContext.Provider value={[category, setCategory]}>
+                <HomeRoute></HomeRoute>
+            </CategoryContext.Provider>
+        </UserContext.Provider>
+    );
+};
 
 export default App;

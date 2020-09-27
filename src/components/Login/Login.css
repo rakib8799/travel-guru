@@ -1,0 +1,13 @@
+.content1,.content2{
+    width: 40%;
+}
+.formContent{
+    width: 90%;
+}
+
+#FirstName,#LastName,#Email,#Password,#confirmPassword {
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+    border-bottom: 2px solid rgba(39, 26, 26, 0.418);
+}
